@@ -25,6 +25,10 @@ GooglePlus.prototype.getSigningCertificateFingerprint = function (successCallbac
   cordova.exec(successCallback, errorCallback, "GooglePlus", "getSigningCertificateFingerprint", []);
 };
 
+GooglePlus.prototype.setServerClientId = function( serverClientId, successCallback, errorCallback ){
+	cordova.exec(successCallback, errorCallback, "GooglePlus", "setServerClientId", [serverClientId]);
+}
+
 GooglePlus.install = function () {
   if (!window.plugins) {
     window.plugins = {};
