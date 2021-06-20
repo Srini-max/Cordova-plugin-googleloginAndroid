@@ -61,7 +61,7 @@ implements GoogleApiClient.OnConnectionFailedListener {
         } else if (action.equals(ACTION_SILENT_LOGIN)) {
             silentLogin(callbackContext);
         } else {
-            Log.i(TAG, "This action doesn't exist");
+            Log.i(TAG, "This action doesn't exist:"+action);
             return false;
         }
         return true;
