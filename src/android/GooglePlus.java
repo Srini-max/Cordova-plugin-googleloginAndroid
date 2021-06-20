@@ -145,6 +145,7 @@ implements GoogleApiClient.OnConnectionFailedListener {
         GoogleSignInOptions.Builder optionsBuilder = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
 	    .requestScopes(new Scope("https://www.googleapis.com/auth/drive"))
 	    .requestScopes(new Scope("https://www.googleapis.com/auth/drive.readonly"))
+		.requestScopes(new Scope("https://www.googleapis.com/auth/calendar"))
             .requestEmail();
         //.requestProfile();
 
