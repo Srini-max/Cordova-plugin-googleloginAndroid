@@ -16,6 +16,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
 
 //import com.google.api.services.drive.Drive;
 //import com.google.api.services.drive.DriveScopes;
@@ -143,6 +145,7 @@ implements GoogleApiClient.OnConnectionFailedListener {
     private void createGoogleApiClient() {
         //create builder we can manipulate
         GoogleSignInOptions.Builder optionsBuilder = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+	.requestScopes(DriveScopes.DRIVE)
 	.requestEmail();
 	    //.requestScopes(new Scope("https://www.googleapis.com/auth/drive"), new Scope("https://www.googleapis.com/auth/drive.readonly"))
 	    //.requestScopes(new Scope("https://www.googleapis.com/auth/drive.readonly"))
