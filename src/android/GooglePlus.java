@@ -16,12 +16,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
+import com.google.api.services.calendar.Calendar;
+import com.google.api.services.calendar.CalendarScopes;
 
-//import com.google.api.services.drive.Drive;
-//import com.google.api.services.drive.DriveScopes;
-//import com.google.api.services.drive.model.File;
 
 import org.apache.cordova.*;
 import org.json.JSONException;
@@ -145,9 +145,8 @@ implements GoogleApiClient.OnConnectionFailedListener {
     private void createGoogleApiClient() {
         //create builder we can manipulate
         GoogleSignInOptions.Builder optionsBuilder = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-	.requestScopes(new Scope("https://www.googleapis.com/auth/drive"), new Scope("https://www.googleapis.com/auth/drive.readonly"))
-	.requestScopes(new Scope("https://www.googleapis.com/auth/drive.readonly"))
-	.requestScopes(new Scope("https://www.googleapis.com/auth/calendar"))
+        .requestScopes(new Scope(DriveScopes.DRIVE_FILE))
+        .requestScopes(new Scope(CalendarScopes.CALENDAR_READONLY))
 	.requestEmail();
 	    //.requestScopes(new Scope("https://www.googleapis.com/auth/drive"), new Scope("https://www.googleapis.com/auth/drive.readonly"))
 	    //.requestScopes(new Scope("https://www.googleapis.com/auth/drive.readonly"))
